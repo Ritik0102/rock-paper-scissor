@@ -8,7 +8,7 @@ function App() {
 
   return (
     <>
-    <BrowserRouter>
+    <BrowserRouter basename='/rock-paper-scissor'>
     <Routes>
       <Route exact path='/' element={<Home/>}></Route>
       <Route path='/game' element={<Game/>}></Route>
