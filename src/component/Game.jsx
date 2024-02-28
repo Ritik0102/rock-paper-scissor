@@ -10,6 +10,7 @@ import { useNavigate } from "react-router-dom";
 import Spinner from "./Spinner";
 
 function Game(props) {
+  const [num, setNum] = useState(0)
   const [img, setImg] = useState(Bot);
   const [player, setPlayer] = useState(Player);
   const [alert, setAlert] = useState("Result");
@@ -25,6 +26,7 @@ function Game(props) {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
+      setNum(num+1)
       const arrr = ["Paper", "Rock", "Scissor"];
       const choice = arrr[Math.floor(Math.random() * arrr.length)];
       if (choice == "Paper") {
@@ -73,7 +75,7 @@ function Game(props) {
 
   useEffect(() => {
     play();
-  }, [loading]);
+  }, [num]);
 
   return (
     <div className="app">
